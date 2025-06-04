@@ -4,3 +4,30 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header {
+    background-color: gray;
+    margin-top: 0px;
+    padding: 10px;
+}
+
+#top-title-page-select {
+    display: flex;
+    justify-content: space-around;
+}
+
+#music-holder {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 10px; */
+    /* grid-row: auto; */
+    row-gap: 40px;
+    column-gap: 40px;
+    padding: 100px;
+}
+
+
+/* @media {max-width: 1300px) {
+
+} */
+ 
