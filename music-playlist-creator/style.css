@@ -3,12 +3,19 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    height: 100vh;
 }
 
 header {
     background-color: gray;
     margin-top: 0px;
     padding: 10px;
+    border-bottom: 2px solid black
+}
+
+footer { 
+    padding: 25px 50px 25px;
+    background-color: gray;
 }
 
 #top-title-page-select {
@@ -16,18 +23,201 @@ header {
     justify-content: space-around;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    height: 80%;
+    width: 100%; 
+    /* scale: 1 1; */
+    /* padding-left: 10%; */
+    /* padding-right: 10%; */
+}
+
+.song {
+    /* visibility: hidden; */
+    /* flex: 0 0 20%; */
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px #888888;
+    border: 1.5px solid black;
+    transform: 8s ease-in-out;
+}
+
 #music-holder {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: 10px; */
-    /* grid-row: auto; */
-    row-gap: 40px;
-    column-gap: 40px;
-    padding: 100px;
+    margin-top: 10px;
+
+    row-gap: 5vh;
+    column-gap: 5vw;
+    width: 90vw;
+    height: 65vh; 
+
+    transition: all 0.5s ease-in-out;
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    width: 90vw; */
+}
+
+.song {
+    background-color: red;
+}
+
+.song img {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 0px; 
+    border-radius: 5px;
+    scale: 0.95 0.95;
+}
+.song h3 {
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.song p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
 }
 
 
-/* @media {max-width: 1300px) {
+#footer-div {
+    padding: 10px;
+    background-color: gray;
+    margin-top: 15vh;
+}
 
-} */
- 
+.song:hover {
+    scale: 1.025 1.025;
+    transform: translateY(-5px);
+}
+
+
+
+/* CSS for Modal */
+.modal {
+    visibility: hidden;
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+   background-color: #fefefe;
+   margin: 15% auto; /* 15% from the top and centered */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+   margin-left: 97%;
+}
+.close:hover,
+.close:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+   border-radius: 10px;
+
+}
+#modal-top {
+    display: flex;
+
+    height: 30%;
+    width: 100%;
+}
+
+#icon {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-img {
+    border-radius: 5px;
+    width: 100px;
+    height: 100%;
+}
+#icon-description {
+    margin-left: 30px;
+}
+
+#modal-button {
+    margin-top: 10px;
+}
+
+#modal-bottom {
+    overflow-y: auto;
+    margin-top: 10px;
+    /* width: 100%; */
+    height: 300px;
+}
+
+.modal-songs {
+    background-color: #888;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#modal-songs {
+    visibility: "hidden";
+}
+
+#modal-song-img {
+    width: 100px;
+    height: 100%;
+}
+
+#modal-song-description {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-song-description h4 {
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    font-size: 3vh;
+    width: 20vw;
+}
+#modal-song-description p {
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+
+#modal-song-duration {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+@media only screen and (min-width: 1080px){
+    .modal-content {
+        width: 50vw;
+    }
+}

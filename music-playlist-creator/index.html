@@ -21,39 +21,53 @@
 
     <main> 
         <!-- Your main content here -->
-         <div id= "music-holder">
-            <article class="song">
+        <div id= "music-holder" class="playlist-cards">
+            <article id="song-template" class="song">
+                <img src="assets\img\playlist.png" alt="">
                 <h3>Title</h3>
                 <p>Author</p>
-            </article>
-            <article class="song">
-                <h3>Title</h3>
-                <p>Author</p>
-            </article>
-            <article class="song">
-                <h3>Title</h3>
-                <p>Author</p>
-            </article>
-            <article class="song">
-                <h3>Title</h3>
-                <p>Author</p>
-            </article>
-            <article class="song">
-                <h3>Title</h3>
-                <p>Author</p>
-            </article>
-            <article class="song">
-                <h3>Title</h3>
-                <p>Author</p>
-            </article>
-            
-         </div>
+            </article> 
+        </div>
+        
+        <!-- Modal Structure -->
+        <div id="the-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-top">
+
+                    <div id="icon">
+                        <img src="assets\img\song.png" alt="" id="modal-img">
+                        <button id="modal-button">Shuffle</button>
+                    </div>
+                    <div id="icon-description">
+                        <h3>Playlist Name</h3>
+                        <p>Created by ..</p>
+                    </div>
+                </div>
+
+                <div id="modal-bottom">
+                    <article id="modal-songs" class="modal-songs">
+                        <img src="assets\img\song.png" alt="" id="modal-song-img">
+                        <div id="modal-song-description">
+                            <h4>Eye of tiger</h4>
+                            <p>Justin timerlake</p>
+                            <p>Graduation</p>
+                        </div>
+                        <p id="modal-song-duration">3:56</p>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
         <!-- Your footer content here -->
+        <!-- <div id="footer-div"></div> -->
     </footer>
-    <script src="data/data.js"></script>
-    <script src="script.js"></script>
+    <script defer src="info.js"></script>
+    <script defer src="script.js"></script>
+    <!-- <script src="data/data.js"></script> -->
 </body>
 </html>
