@@ -46,8 +46,13 @@
 
 let playlistClickEnabled = true
 
-function showPlaylistInfo(songTable) {
+function showPlaylistInfo(songTable, playlistTable) {
     let saveList = []
+
+    let topModal = document.querySelector("#modal-top")
+    topModal.querySelector("#icon").src = playlistTable.playlist_art
+    topModal.querySelector("#icon-description").querySelector("#modal-playlist-name").innerHTML = playlistTable.playlist_name
+    topModal.querySelector("#icon-description").querySelector("#modal-playlist-author").innerHTML = playlistTable.playlist_author
 
     for (let songName in songTable) { 
         let alternate = true
@@ -138,7 +143,7 @@ function populatePlaylists() {
         clone.addEventListener("click", function() {
             if (likeClickId === playlistClickId) {
                 document.querySelector(".modal").style.visibility = "visible"
-                showPlaylistInfo(playlist[i].songs)
+                showPlaylistInfo(playlist[i].songs, playlist[i])
             } else {
                 playlistClickId = likeClickId
             }

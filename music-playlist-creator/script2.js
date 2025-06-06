@@ -17,8 +17,6 @@ function loadFeaturePage() {
         let clone = document.querySelector(".song").cloneNode(true)
         document.getElementById("songs-holder").appendChild(clone)
         
-        
-        
 
         for (let child of clone.children) {
             if (child.id === "song-info") {
@@ -31,12 +29,15 @@ function loadFeaturePage() {
                         divChild.innerHTML = SelectedPlaylist.songs[song].album
                     } else if (divChild.id === "duration") {
                         divChild.innerHTML = SelectedPlaylist.songs[song].duration
-                    } 
+                    } else if (divChild.id === "song-name") {
+                        divChild.innerHTML = song
+                    }
                 }
             }
         }
-
     }
+
+    document.querySelector("#song").remove()
 
     // for (let child of clone.children) {
     //     if (child.nodeName === "IMG") {

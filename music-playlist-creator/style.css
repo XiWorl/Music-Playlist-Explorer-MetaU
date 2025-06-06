@@ -1,23 +1,32 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e5e5e5;
+    background-color: #ededed;
     height: 100vh;
 }
 
 header {
-    background-color: gray;
+    background-color: #047dad;
     margin-top: 0px;
-    padding: 10px;
+    padding: 1vh;
     border-bottom: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
+header h1 {
+    font-size: 1.5em;
+}
+
 footer { 
-    padding: 25px 50px 25px;
-    background-color: gray;
+    background-color: #047dad;
+    position: fixed;
+    bottom: 0px;
+    padding-left: 100vw;
+    padding-top: 5vh;
+    padding-right: 100px;
+    margin-left: 0vw;
 }
 
 #top-title-page-select {
@@ -30,15 +39,13 @@ footer {
 }
 
 main {
+    height: 80%;
+    width: 100vw; 
+
     display: flex;
     justify-content: center;
     flex-direction: row;
-
-    height: 80%;
-    width: 100%; 
-    /* scale: 1 1; */
-    /* padding-left: 10%; */
-    /* padding-right: 10%; */
+    margin: 0 auto;
 }
 
 .song {
@@ -47,27 +54,26 @@ main {
     border-radius: 5px;
     box-shadow: 1px 1px 10px 1px #888888;
     border: 1.5px solid black;
-    transform: 8s ease-in-out;
+    /* transform: 8s ease-in-out; */
     background-color: rgb(255, 255, 255);
     position: relative;
+    transition: all 0.1s ease-in-out;
+    overflow-y: hidden;
+
 }
 
 #music-holder {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 20vw);
+    grid-template-rows: repeat(4, 35vh);
     margin-top: 10px;
 
     row-gap: 5vh;
-    column-gap: 5vw;
+    column-gap: 2vw;
     width: 90vw;
-    height: 65vh; 
 
-    transition: all 0.5s ease-in-out;
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 10px;
-    width: 90vw; */
+    transition: all 0.25s ease-in-out;
+    justify-content: center;
 }
 
 
@@ -82,12 +88,15 @@ main {
     margin-top: 0px;
     margin-left: 5px;
     margin-bottom: 0px;
+    font-size: 1em;
 }
 
 .song p {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 5px;
+    font-size: 1em;
+
 }
 
 
@@ -100,6 +109,8 @@ main {
 .song:hover {
     /* scale: 1.025 1.025; */
     transform: translateY(-5px);
+    box-shadow: 1px 1px 10px 4px #888888;
+
 }
 
 
@@ -178,12 +189,14 @@ main {
 }
 
 .modal-songs {
-    background-color: #888;
+    background-color: #f3f3f3;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 10px;
+    border: black solid 1.5px;
+    /* overflow-y: scroll; */
 }
 
 #modal-songs {
@@ -193,6 +206,7 @@ main {
 #modal-song-img {
     width: 100px;
     height: 100%;
+    border-radius: 5px;
 }
 
 #modal-song-description {
@@ -205,14 +219,17 @@ main {
     margin-top: 5px;
     margin-left: 30px;
     margin-bottom: 0px;
-    font-size: 3vh;
-    width: 20vw;
+    font-size: 2vw;
+    width: 50vw;
 }
 #modal-song-description p {
     margin: 0px;
     margin-top: 5px;
     margin-left: 30px;
     margin-bottom: 0px;
+    font-size: 2vw;
+    width: 40vw;
+    max-height: 4vw;
 }
 
 #modal-song-duration {
@@ -225,7 +242,58 @@ main {
     .modal-content {
         width: 50vw;
     }
+
+    #music-holder {
+        grid-template-columns: repeat(4, 10vw);
+        grid-template-rows: repeat(4, 35vh);
+        row-gap: 5vh;
+        column-gap: 2vw;
+    }
+
+    #modal-song-description p {
+        font-size: 2vw;
+        width: 40vw;
+        max-height: 4vw;
+    }
+
+    #modal-song-description h4 {
+        font-size: 2vw;
+        width: 50vw;
+    }
+
 }
+
+
+/* height: 40vh;  */
+/* max-height: 40vh; */
+ /*@media only screen and (min-width: 1080px){
+    .modal-content {
+        width: 50vw;
+    }
+
+    #music-holder {
+        row-gap: 5vh;
+        column-gap: 5px;
+        width: 90vw;
+        
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    .modal-content {
+        width: 50vw;
+    }
+
+    #music-holder {
+        row-gap: 5vh;
+        column-gap: 5px;
+        width: 100vw;
+        height: 40vh; 
+        max-height: 40vh;
+    }
+
+}  */
 
 
 

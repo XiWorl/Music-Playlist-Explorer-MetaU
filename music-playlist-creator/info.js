@@ -1,108 +1,167 @@
-
 let playlist = [
-    {
-    "playlistID": 1,
-        "playlist_name": "Morning Motivation",
-        "playlist_author": "Emily Chen",
-        "playlist_art": "assets/img/playlist.png",
-        "playlist_likes": 5,
-        "songs": {
-            "Wake Me Up": {
-                duration: "3:44",
-                author: "Avicii",
-                album: "True",
-                img: "assets/img/song.png"
-            },
-            "Can't Stop": {
-                duration: "5:11",
-                author: "Red Hot Chili Peppers",
-                album: "By the Way",
-                img: "assets/img/song.png"
-            },
-        }
+  {
+    playlistID: 1,
+    playlist_name: "Morning Motivation",
+    playlist_author: "Emily Chen",
+    playlist_art: "assets/img/playlist.png",
+    playlist_likes: 5,
+    songs: {
+      "Wake Me Up": {
+        duration: "3:44",
+        author: "Avicii",
+        album: "True",
+        img: "assets/img/song.png",
+      },
+      "Can't Stop": {
+        duration: "5:11",
+        author: "Red Hot Chili Peppers",
+        album: "By the Way",
+        img: "assets/img/song.png",
+      },
+      "Uptown Funk": {
+        duration: "4:38",
+        author: "Mark Ronson ft. Bruno Mars",
+        album: "Uptown Special",
+        img: "assets/img/song.png",
+      },
+      Happy: {
+        duration: "3:53",
+        author: "Pharrell Williams",
+        album: "G I R L",
+        img: "assets/img/song.png",
+      },
     },
-    {
-        "playlistID": 2,
-        "playlist_name": "Relaxing Evening",
-        "playlist_author": "David Lee",
-        "playlist_art": "assets/img/song.png",
-        "playlist_likes": 10,
-        "songs": {
-            "River Flows in You": {
-                duration: "3:38",
-                author: "Yiruma",
-                album: "First Love",
-                img: "assets/img/song.png"
-            },
-            "Weightless": {
-                duration: "4:28",
-                author: "Marconi Union",
-                album: "Gravity",
-                img: "assets/img/song.png"
-            },
-        }
+  },
+  {
+    playlistID: 2,
+    playlist_name: "Relaxing Evening",
+    playlist_author: "David Lee",
+    playlist_art: "assets/img/beachalbum.jpg",
+    playlist_likes: 10,
+    songs: {
+      "River Flows in You": {
+        duration: "3:38",
+        author: "Yiruma",
+        album: "First Love",
+        img: "assets/img/song.png",
+      },
+      Weightless: {
+        duration: "4:28",
+        author: "Marconi Union",
+        album: "Gravity",
+        img: "assets/img/song.png",
+      },
+      "Clair de Lune": {
+        duration: "4:55",
+        author: "Claude Debussy",
+        album: "Preludes, Book 1",
+        img: "assets/img/song.png",
+      },
+      "Moonlight Sonata": {
+        duration: "5:23",
+        author: "Ludwig van Beethoven",
+        album: "Piano Sonata No. 14",
+        img: "assets/img/song.png",
+      },
     },
-    {
-        "playlistID": 3,
-        "playlist_name": "Workout Mix",
-        "playlist_author": "Sarah Taylor",
-        "playlist_art": "assets/img/song.png",
-        "playlist_likes": 15,
-        "songs": {
-            "Eye of the Tiger": {
-                duration: "3:59",
-                author: "Survivor",
-                album: "Eye of the Tiger",
-                img: "assets/img/song.png"
-            },
-            "Lose Yourself": {
-                duration: "5:26",
-                author: "Eminem",
-                album: "8 Mile: Music from and Inspired by the Motion Picture",
-                img: "assets/img/song.png"
-            },
-        }
+  },
+  {
+    playlistID: 3,
+    playlist_name: "Workout Mix",
+    playlist_author: "Sarah Taylor",
+    playlist_art: "assets/img/song.png",
+    playlist_likes: 15,
+    songs: {
+      "Eye of the Tiger": {
+        duration: "3:59",
+        author: "Survivor",
+        album: "Eye of the Tiger",
+        img: "assets/img/song.png",
+      },
+      "Lose Yourself": {
+        duration: "5:26",
+        author: "Eminem",
+        album: "8 Mile: Music from and Inspired by the Motion Picture",
+        img: "assets/img/song.png",
+      },
+      "We Will Rock You": {
+        duration: "2:28",
+        author: "Queen",
+        album: "News of the World",
+        img: "assets/img/song.png",
+      },
+      Unstoppable: {
+        duration: "3:59",
+        author: "Sia",
+        album: "This Is Acting",
+        img: "assets/img/song.png",
+      },
     },
-    {
-        "playlistID": 4,
-        "playlist_name": "Throwback Thursday",
-        "playlist_author": "Michael Brown",
-        "playlist_art": "assets/img/song.png",
-        "playlist_likes": 20,
-        "songs": {
-            "I Want It That Way": {
-                duration: "3:33",
-                author: "Backstreet Boys",
-                album: "Millennium",
-                img: "assets/img/song.png"
-            },
-            "Waterfalls": {
-                duration: "4:39",
-                author: "TLC",
-                album: "CrazySexyCool",
-                img: "assets/img/song.png"
-            },
-        }
+  },
+  {
+    playlistID: 4,
+    playlist_name: "Throwback Thursday",
+    playlist_author: "Michael Brown",
+    playlist_art: "assets/img/song.png",
+    playlist_likes: 20,
+    songs: {
+      "I Want It That Way": {
+        duration: "3:33",
+        author: "Backstreet Boys",
+        album: "Millennium",
+        img: "assets/img/song.png",
+      },
+      Waterfalls: {
+        duration: "4:39",
+        author: "TLC",
+        album: "CrazySexyCool",
+        img: "assets/img/song.png",
+      },
+      "No Scrubs": {
+        duration: "3:38",
+        author: "TLC",
+        album: "FanMail",
+        img: "assets/img/song.png",
+      },
+      "Bye Bye Bye": {
+        duration: "3:19",
+        author: "NSYNC",
+        album: "No Strings Attached",
+        img: "assets/img/song.png",
+      },
     },
-    {
-        "playlistID": 5,
-        "playlist_name": "Focus Flow",
-        "playlist_author": "Jessica White",
-        "playlist_art": "assets/img/song.png",
-        "playlist_likes": 12,
-        "songs": {
-            "Clair de Lune": {
-                duration: "4:55",
-                author: "Claude Debussy",
-                album: "Preludes, Book 1",
-                img: "assets/img/song.png"
-            },
-            "Moonlight Sonata": {
-                duration: "5:23",
-                author: "Ludwig van Beethoven",
-                album: "Piano Sonata No. 14",
-                img: "assets/img/song.png"
-            },
-        }
-    }
-]
+  },
+  {
+    playlistID: 5,
+    playlist_name: "Focus Flow",
+    playlist_author: "Jessica White",
+    playlist_art: "assets/img/song.png",
+    playlist_likes: 12,
+    songs: {
+      "Clair de Lune": {
+        duration: "4:55",
+        author: "Claude Debussy",
+        album: "Preludes, Book 1",
+        img: "assets/img/song.png",
+      },
+      "Moonlight Sonata": {
+        duration: "5:23",
+        author: "Ludwig van Beethoven",
+        album: "Piano Sonata No. 14",
+        img: "assets/img/song.png",
+      },
+      "Für Elise": {
+        duration: "4:07",
+        author: "Ludwig van Beethoven",
+        album: "Piano Bagatelles",
+        img: "assets/img/song.png",
+      },
+      "The Four Seasons": {
+        duration: "10:01",
+        author: "Antonio Vivaldi",
+        album: "The Four Seasons",
+        img: "assets/img/song.png",
+      },
+    },
+  },
+];
