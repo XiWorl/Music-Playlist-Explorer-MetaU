@@ -1,3 +1,5 @@
+let deletedSongs = []
+
 function showPlaylistInfo(songTable, playlistTable) {
     let saveList = []
 
@@ -112,6 +114,7 @@ function createPlaylistSong(playlistTable) {
 
     clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
         // disableSong = true
+        deletedSongs.push(playlistTable.playlist_name)
         event.stopPropagation()
         clone.remove()
     })
@@ -119,7 +122,10 @@ function createPlaylistSong(playlistTable) {
 
 function populatePlaylists() {
     for (let i = 0; i < playlist.length; i++) {
-        console.log("create playlist")
+        if (deletedSongs.includes(playlist[i].playlist_name)) {
+            console.log("continue")
+            continue
+        }
     //     let clone = document.querySelector(".song").cloneNode(true)
     //     document.getElementById("music-holder").appendChild(clone)
 
@@ -195,7 +201,6 @@ function deleteAll() {
         document.querySelector("#music-holder").remove()
     }
   
-    console.log(document.getElementById("holder-clone"))
     let clone = document.querySelector("#holder-clone").cloneNode(true)
     document.querySelector("main").appendChild(clone)
     clone.id = "music-holder"
@@ -206,6 +211,7 @@ function searchPress() {
     deleteAll()
 
     if ( searchValue == " ") {
+        deletedSongs = []
         populatePlaylists()
     }
     for (let i = 0; i < playlist.length; i++) {
@@ -215,3 +221,34 @@ function searchPress() {
         }
     }
 }
+
+
+
+
+let filterInfo = {
+    0: "Sort by",
+    1: "Playlist Name",
+    2: "Likes",
+    3: "Author Name"
+}
+
+document.querySelector("#filter-field").addEventListener("change", function(event) {
+    let selectedValue = event.target.value
+
+    console.log(filterInfo[event.target.value])
+
+    if (selectedValue == "1") {
+        console.log("Sorting by Name")
+        playlist.sort((a,b) => a.playlist_name.localeCompare(b.playlist_name))
+        console.log(playlist)
+    } else if (selectedValue == "2") {
+        playlist.sort((a,b) => b.playlist_likes - a.playlist_likes)
+        console.log(playlist)
+    } else if (selectedValue == "3") {
+        playlist.sort((a,b) => a.playlist_author.localeCompare(b.playlist_author))
+        console.log(playlist)
+    }
+
+    deleteAll()
+    populatePlaylists()
+})

@@ -4,7 +4,7 @@ let playlist = [
     playlist_name: "Morning Motivation",
     playlist_author: "Emily Chen",
     playlist_art: "assets/img/Morning Motivation.jpg",
-    playlist_likes: 5,
+    playlist_likes: 3,
     songs: {
       "Wake Me Up": {
         duration: "3:44",
@@ -37,13 +37,13 @@ let playlist = [
     playlist_name: "Relaxing Evening",
     playlist_author: "David Lee",
     playlist_art: "assets/img/beachalbum.jpg",
-    playlist_likes: 10,
+    playlist_likes: 15,
     songs: {
       "River Flows in You": {
         duration: "3:38",
         author: "Yiruma",
         album: "First Love",
-        img: "assets/img/beachalbum.jpg",
+        img: "assets/img/River Flows In You.jpg",
       },
       Weightless: {
         duration: "4:28",
@@ -70,7 +70,7 @@ let playlist = [
     playlist_name: "Workout Mix",
     playlist_author: "Sarah Taylor",
     playlist_art: "assets/img/Workout mix.jpg",
-    playlist_likes: 15,
+    playlist_likes: 28,
     songs: {
       "Eye of the Tiger": {
         duration: "3:59",
@@ -103,7 +103,7 @@ let playlist = [
     playlist_name: "Throwback Thursday",
     playlist_author: "Michael Brown",
     playlist_art: "assets/img/TBT Album.png",
-    playlist_likes: 20,
+    playlist_likes: 29,
     songs: {
       "I Want It That Way": {
         duration: "3:33",
