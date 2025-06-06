@@ -40,7 +40,7 @@ header {
 }
 
 #playlist-image {
-    width: 40vw;
+    width: 30vw;
     height: 50vh;
     border-radius: 5%;
 }
@@ -101,4 +101,9 @@ header {
 #duration {
     margin: 0px;
     margin-left: 10px;
+}
+
+
+#song-info p {
+    white-space: nowrap;
 }

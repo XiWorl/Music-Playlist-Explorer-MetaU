@@ -1,8 +1,4 @@
 
-console.log(playlist)
-
-
-
 
 function loadFeaturePage() {
     console.log(playlist[0])
@@ -12,7 +8,6 @@ function loadFeaturePage() {
     document.querySelector("#playlist-image").src = SelectedPlaylist.playlist_art
 
     for (let song in SelectedPlaylist.songs) {
-        console.log(song)
 
         let clone = document.querySelector(".song").cloneNode(true)
         document.getElementById("songs-holder").appendChild(clone)
@@ -20,7 +15,8 @@ function loadFeaturePage() {
 
         for (let child of clone.children) {
             if (child.id === "song-info") {
-                // child.src = SelectedPlaylist.songs.img
+                console.log(SelectedPlaylist.songs[song].img)
+                child.parentNode.querySelector("#song-image").src = SelectedPlaylist.songs[song].img
                 
                 for (let divChild of child.children) {
                     if (divChild.id === "artist-name") {

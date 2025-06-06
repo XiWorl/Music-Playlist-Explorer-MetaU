@@ -9,14 +9,14 @@ body {
 header {
     background-color: #047dad;
     margin-top: 0px;
-    padding: 1vh;
+    padding: 0.5vh;
     border-bottom: 2px solid black;
     display: flex;
     flex-direction: row;
 }
 
 header h1 {
-    font-size: 3.5vh;
+    font-size: 3vh;
 }
 
 footer { 
@@ -24,7 +24,7 @@ footer {
     position: fixed;
     bottom: 0px;
     padding-left: 100vw;
-    padding-top: 5vh;
+    padding-top: 2vh;
     padding-right: 100px;
     margin-left: 0vw;
     border-top: 2px solid black;;
@@ -66,7 +66,7 @@ main {
 #music-holder {
     display: grid;
     grid-template-columns: repeat(4, 20vw);
-    grid-template-rows: repeat(4, 35vh);
+    grid-template-rows: repeat(4, 40vh);
     margin-top: 10px;
 
     row-gap: 5vh;
@@ -75,6 +75,7 @@ main {
 
     transition: all 0.25s ease-in-out;
     justify-content: center;
+
 }
 
 
@@ -89,15 +90,16 @@ main {
     margin-top: 0px;
     margin-left: 5px;
     margin-bottom: 0px;
-    font-size: 1em;
+    font-size: 1.5vw;
 }
 
 .song p {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 5px;
-    font-size: 1em;
-
+    font-size: 1vw;
+    /* overflow-x: auto; */
+    /* white-space: nowrap; */
 }
 
 
@@ -221,7 +223,7 @@ main {
     margin-left: 30px;
     margin-bottom: 0px;
     font-size: 2vw;
-    width: 50vw;
+    /* width: 50vw; */
 }
 #modal-song-description p {
     margin: 0px;
@@ -229,7 +231,7 @@ main {
     margin-left: 30px;
     margin-bottom: 0px;
     font-size: 2vw;
-    width: 40vw;
+    /* width: 40vw; */
     max-height: 4vw;
 }
 
@@ -245,62 +247,113 @@ main {
     }
 
     #music-holder {
-        grid-template-columns: repeat(4, 10vw);
-        grid-template-rows: repeat(4, 35vh);
+        
+        grid-template-columns: repeat(4, 15vw);
+        grid-template-rows: repeat(4, 40vh);
         row-gap: 5vh;
         column-gap: 2vw;
     }
 
     #modal-song-description p {
-        font-size: 2vw;
+        font-size: 1vw;
+        /* width: 40vw; */
+        max-height: 4vw;
+    }
+
+    #modal-song-description h4 {
+        font-size: 1.5vw;
+        /* width: 50vw; */
+    }
+
+    .song p {
+        font-size: 1vw;
+    }
+
+    .song h3 {
+        font-size: 1.5vw;
+    }
+
+}
+
+@media only screen and (max-width: 760px){
+    .modal-content {
+        width: 50vw;
+    }
+
+    #music-holder {
+        grid-template-columns: repeat(4, 15vw);
+        grid-template-rows: repeat(4, 40vh);
+        row-gap: 5vh;
+        column-gap: 2vw;
+    }
+
+    #modal-song-description p {
+        font-size: 1.5vw;
+        max-height: 4vw;
+    }
+
+    #modal-song-description h4 {
+        font-size: 1.5vw;
+    }
+
+    .song p {
+        font-size: 1vw;
+    }
+
+    .song h3 {
+        font-size: 1.5vw;
+    }
+
+    #modal-song-duration {
+        /* font-size; */
+    }
+
+}
+
+
+@media only screen and (max-width: 400px){
+    .modal-content {
+        width: 50vw;
+    }
+
+    #music-holder {
+        grid-template-columns: repeat(4, 15vw);
+        grid-template-rows: repeat(4, 40vh);
+        row-gap: 5vh;
+        column-gap: 2vw;
+    }
+
+    #modal-song-description p {
+        font-size: 1.5vw;
         width: 40vw;
         max-height: 4vw;
     }
 
     #modal-song-description h4 {
+        font-size: 1.5vw;
+        width: 50vw;
+    }
+
+    .song p {
         font-size: 2vw;
-        width: 50vw;
+    }
+
+    .song h3 {
+        font-size: 2vw;
     }
 
 }
 
 
-/* height: 40vh;  */
-/* max-height: 40vh; */
- /*@media only screen and (min-width: 1080px){
-    .modal-content {
-        width: 50vw;
-    }
-
-    #music-holder {
-        row-gap: 5vh;
-        column-gap: 5px;
-        width: 90vw;
-        
-    }
-
+#likes {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 5px;
+    align-items: center;
 }
-
-@media only screen and (max-width: 500px){
-    .modal-content {
-        width: 50vw;
-    }
-
-    #music-holder {
-        row-gap: 5vh;
-        column-gap: 5px;
-        width: 100vw;
-        height: 40vh; 
-        max-height: 40vh;
-    }
-
-}  */
-
-
-
 
 #like-button {
-    position: absolute;
     bottom: 5px;
     margin-left: 5px;
     height: 20px;

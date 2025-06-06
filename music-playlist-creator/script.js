@@ -33,11 +33,14 @@ function showPlaylistInfo(songTable, playlistTable) {
         saveList.push(clone)
     }
 
-    for (let i = 0; i < 2; i++) {
-        for (let child of document.querySelector("#modal-bottom").children) {
-            if (saveList.indexOf(child) === -1) {
-                child.remove()
-            }
+    
+    let childElementsArray = [...document.querySelector("#modal-bottom").children];
+    for (let i = 0; i < childElementsArray.length; i++) {
+        if (saveList.includes(childElementsArray[i]) == false) {
+            console.log(childElementsArray[i])
+            childElementsArray[i].remove()
+        } else {
+            console.log(childElementsArray[i])
         }
     }
 }
@@ -54,7 +57,6 @@ function onLikeClick(image, playlistLikes) {
         image.className = "empty"
         // playlistLikes -= 0
     }
-    console.log(playlistLikes)
 
     likeClickId++
     // document.querySelector("#like-text").innerHTML = "Likes: "+ playlistLikes
@@ -89,14 +91,14 @@ function populatePlaylists() {
                 }
             }else if (child.nodeName === "IMG") {
                 child.src = playlist[i].playlist_art
-            }else if (child.nodeName === "INPUT") {
-                child.addEventListener("click", function() {
+            }else if (child.nodeName === "DIV") {
+                child.querySelector("#like-button").addEventListener("click", function() {
                     playlistClickEnabled = false
-                    onLikeClick(child, playlist[i].playlist_likes)
+                    onLikeClick(child.querySelector("#like-button"), playlist[i].playlist_likes)
                 })
-            } else if (child.id === "like-text") {
-                
-            }
+
+                child.querySelector("#like-text").innerHTML = "Likes: "+playlist[i].playlist_likes
+            } 
         }
 
         clone.addEventListener("click", function() {
