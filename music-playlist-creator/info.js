@@ -1,10 +1,10 @@
 let playlist = [
   {
     playlistID: 1,
-    playlist_name: "Morning Motivation",
+    playlist_name: "Daily Motivation",
     playlist_author: "Emily Chen",
     playlist_art: "assets/img/Morning Motivation.jpg",
-    playlist_likes: 3,
+    playlist_likes: 45,
     songs: {
       "Wake Me Up": {
         duration: "3:44",
@@ -37,7 +37,7 @@ let playlist = [
     playlist_name: "Relaxing Evening",
     playlist_author: "David Lee",
     playlist_art: "assets/img/beachalbum.jpg",
-    playlist_likes: 15,
+    playlist_likes: 40,
     songs: {
       "River Flows in You": {
         duration: "3:38",
@@ -136,7 +136,7 @@ let playlist = [
     playlist_name: "Beatopia",
     playlist_author: "Beabadoobee",
     playlist_art: "assets/img/Beatopia.png",
-    playlist_likes: 12,
+    playlist_likes: 62,
     songs: {
       "the perfect pair": {
         duration: "2:58",
@@ -277,7 +277,7 @@ let playlist = [
     playlist_name: "Can't Rush Greatness",
     playlist_author: "Central Cee",
     playlist_art: "assets/img/CRG Album.jpg",
-    playlist_likes: 47,
+    playlist_likes: 51,
     songs: {
       "No Introduction": {
         duration: "2:41",

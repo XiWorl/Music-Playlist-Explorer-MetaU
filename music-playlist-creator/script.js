@@ -207,6 +207,7 @@ function deleteAll() {
 }
 
 function searchPress() {
+    let createdSongs = []
     let searchValue = document.querySelector("#search-field").value
     deleteAll()
 
@@ -216,7 +217,15 @@ function searchPress() {
     }
     for (let i = 0; i < playlist.length; i++) {
         let substring = playlist[i].playlist_name.substring(0, searchValue.length)
-        if (substring.toUpperCase() === searchValue.toUpperCase()) {
+        if (substring.toUpperCase() === searchValue.toUpperCase() && createdSongs.includes(playlist[i]) == false) {
+            createdSongs.push(playlist[i])
+            createPlaylistSong(playlist[i])
+        }
+    }
+    for (let i = 0; i < playlist.length; i++) {
+        let substring = playlist[i].playlist_author.substring(0, searchValue.length)
+        if (substring.toUpperCase() === searchValue.toUpperCase() && createdSongs.includes(playlist[i]) == false) {
+            createdSongs.push(playlist[i])
             createPlaylistSong(playlist[i])
         }
     }
@@ -229,7 +238,7 @@ let filterInfo = {
     0: "Sort by",
     1: "Playlist Name",
     2: "Likes",
-    3: "Author Name"
+    3: "Date Added"
 }
 
 document.querySelector("#filter-field").addEventListener("change", function(event) {
@@ -240,13 +249,10 @@ document.querySelector("#filter-field").addEventListener("change", function(even
     if (selectedValue == "1") {
         console.log("Sorting by Name")
         playlist.sort((a,b) => a.playlist_name.localeCompare(b.playlist_name))
-        console.log(playlist)
     } else if (selectedValue == "2") {
         playlist.sort((a,b) => b.playlist_likes - a.playlist_likes)
-        console.log(playlist)
     } else if (selectedValue == "3") {
-        playlist.sort((a,b) => a.playlist_author.localeCompare(b.playlist_author))
-        console.log(playlist)
+        playlist.sort((a,b) => a.playlist_art.localeCompare(b.playlist_art))
     }
 
     deleteAll()
