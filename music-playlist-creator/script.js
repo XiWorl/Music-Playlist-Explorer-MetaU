@@ -44,25 +44,15 @@
 //     return jsData
 // }
 
+let playlistClickEnabled = true
+
 function showPlaylistInfo(songTable) {
-    // console.log(songTable)
-    
-    // for (let child of document.querySelector("#modal-bottom").children) {
-    //     console.log(child)
-    //     if (child.id !== "modal-songs") {
-    //         child.remove()
-    //     }
-    // }
-    
     let saveList = []
 
-    console.log(songTable)
     for (let songName in songTable) { 
         let alternate = true
         let clone = document.querySelector("#modal-songs").cloneNode(true)
         document.getElementById("modal-bottom").appendChild(clone)
-        // console.log(clone)
-        // clone.id = ""
 
         for (let child of clone.children) {
             if (child.nodeName === "IMG") {
@@ -95,6 +85,23 @@ function showPlaylistInfo(songTable) {
     }
 }
 
+let likeClickId = 0
+let playlistClickId = 0
+function onLikeClick(image, playlistLikes) {
+    if (image.className === "empty") {
+        image.src = "assets/img/fullheart.png"
+        image.className = "full"
+        playlistLikes++
+    } else {
+        image.src = "assets/img/emptyheart.png"
+        image.className = "empty"
+        playlistLikes--
+    }
+
+    playlistClickEnabled = true
+    likeClickId++
+
+}
 
 function shufflePlaylist() {
     //replace children
@@ -108,6 +115,7 @@ function populatePlaylists() {
     for (let i = 0; i < playlist.length; i++) {
         let clone = document.querySelector("#song-template").cloneNode(true)
         document.getElementById("music-holder").appendChild(clone)
+
         
         clone.style.visibility = "visible"
         clone.id = ""
@@ -119,12 +127,21 @@ function populatePlaylists() {
                 child.innerHTML = "Created by "+playlist[i].playlist_author
             }else if (child.nodeName === "IMG") {
                 child.src = playlist[i].playlist_art
+            }else if (child.nodeName === "INPUT") {
+                child.addEventListener("click", function() {
+                    playlistClickEnabled = false
+                    onLikeClick(child, playlist[i].playlist_likes)
+                })
             }
         }
 
         clone.addEventListener("click", function() {
-            document.querySelector(".modal").style.visibility = "visible"
-            showPlaylistInfo(playlist[i].songs)
+            if (likeClickId === playlistClickId) {
+                document.querySelector(".modal").style.visibility = "visible"
+                showPlaylistInfo(playlist[i].songs)
+            } else {
+                playlistClickId = likeClickId
+            }
         })
     }
     document.querySelector("#song-template").remove()

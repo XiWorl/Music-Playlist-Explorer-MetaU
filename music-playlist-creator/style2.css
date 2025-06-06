@@ -1,0 +1,36 @@
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#playlist-image {
+    width: 40vw;
+    height: 50vh;
+}
+
+#playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+
+
+#songs-holder {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+.song {
+   display: flex;
+    flex-direction: row;
+    width: 30vw; 
+}
+
+
+#song-image {
+    height: 100px;
+    width: 100px;
+}
