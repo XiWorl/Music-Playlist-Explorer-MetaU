@@ -1,3 +1,18 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+footer { 
+    background-color: #047dad;
+    position: fixed;
+    bottom: 0px;
+    padding-left: 100vw;
+    padding-top: 5vh;
+    padding-right: 100px;
+    margin-left: 0vw;
+    border-top: 2px solid black;;
+}
 header {
     background-color: #047dad;
     margin-top: 0px;
@@ -44,7 +59,7 @@ header {
 #songs-holder {
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    width: 40vw;
     row-gap: 10px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -57,7 +72,9 @@ header {
 }
 
 #song-info {
+    overflow-x: auto;
     height: 1fr;
+    width: 100%;
 }
 
 #song-image {

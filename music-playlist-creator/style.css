@@ -16,7 +16,7 @@ header {
 }
 
 header h1 {
-    font-size: 1.5em;
+    font-size: 3.5vh;
 }
 
 footer { 
@@ -27,6 +27,7 @@ footer {
     padding-top: 5vh;
     padding-right: 100px;
     margin-left: 0vw;
+    border-top: 2px solid black;;
 }
 
 #top-title-page-select {
@@ -300,8 +301,8 @@ main {
 
 #like-button {
     position: absolute;
-    bottom: 0px;
-    margin-left: 10px;
-    height: 10%;
-    width: 20%;
+    bottom: 5px;
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
 }

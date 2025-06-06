@@ -1,51 +1,3 @@
-// async function getJsonData() {
-//   try {
-//     const response = await fetch('./data.json');
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! status: ${response.status}`);
-//     }
-//     return await response.json();
-//   } catch (error) {
-//     console.error('Error fetching JSON:', error);
-//   }
-// }
-
-
-// function populatePlaylists() {
-//     console.log(playlist)
-//     let jsData
-//     getJsonData().then(function(data) {
-//         jsData = data
-
-//         for (let i = 0; i < jsData.length; i++) {
-//             let clone = document.querySelector("#song-template").cloneNode(true)
-//             document.getElementById("music-holder").appendChild(clone)
-            
-//             clone.style.visibility = "visible"
-//             clone.id = ""
-
-//             for (let child of clone.children) {
-//                 if (child.nodeName === "H3") {
-//                     child.innerHTML = jsData[i].playlist_name
-//                 }else if (child.nodeName === "P") {
-//                     child.innerHTML = jsData[i].playlist_author
-//                 }else if (child.nodeName === "IMG") {
-//                     child.src = jsData[i].playlist_art
-//                 }
-//             }
-
-//             clone.addEventListener("click", function() {
-//                 console.log(document.querySelector(".modal"))
-//                 document.querySelector(".modal").style.visibility = "visible"
-//             })
-//         }
-//         document.querySelector("#song-template").remove()
-//     })
-//     return jsData
-// }
-
-let playlistClickEnabled = true
-
 function showPlaylistInfo(songTable, playlistTable) {
     let saveList = []
 
@@ -96,16 +48,17 @@ function onLikeClick(image, playlistLikes) {
     if (image.className === "empty") {
         image.src = "assets/img/fullheart.png"
         image.className = "full"
-        playlistLikes++
+        playlistLikes += 1
     } else {
         image.src = "assets/img/emptyheart.png"
         image.className = "empty"
-        playlistLikes--
+        // playlistLikes -= 0
     }
+    console.log(playlistLikes)
 
-    playlistClickEnabled = true
     likeClickId++
-
+    // document.querySelector("#like-text").innerHTML = "Likes: "+ playlistLikes
+    image.parentNode.querySelector("#like-text").innerHTML = "Likes: "+ playlistLikes
 }
 
 function shufflePlaylist() {
@@ -129,7 +82,11 @@ function populatePlaylists() {
             if (child.nodeName === "H3") {
                 child.innerHTML = playlist[i].playlist_name
             }else if (child.nodeName === "P") {
-                child.innerHTML = "Created by "+playlist[i].playlist_author
+                if (child.id === "like-text") {
+                    child.innerHTML = "Likes: "+playlist[i].playlist_likes
+                } else {
+                    child.innerHTML = "Created by "+playlist[i].playlist_author
+                }
             }else if (child.nodeName === "IMG") {
                 child.src = playlist[i].playlist_art
             }else if (child.nodeName === "INPUT") {
@@ -137,6 +94,8 @@ function populatePlaylists() {
                     playlistClickEnabled = false
                     onLikeClick(child, playlist[i].playlist_likes)
                 })
+            } else if (child.id === "like-text") {
+                
             }
         }
 
