@@ -70,7 +70,7 @@ let playlist = [
     playlist_name: "Workout Mix",
     playlist_author: "Sarah Taylor",
     playlist_art: "assets/img/Workout mix.jpg",
-    playlist_likes: 28,
+    playlist_likes: 0,
     songs: {
       "Eye of the Tiger": {
         duration: "3:59",
