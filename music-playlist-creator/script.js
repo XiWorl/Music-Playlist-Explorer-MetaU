@@ -4,7 +4,6 @@ function showPlaylistInfo(songTable, playlistTable) {
     let saveList = []
 
     let topModal = document.querySelector("#modal-top")
-    // topModal.querySelector("#icon").src = playlistTable.playlist_art
     topModal.querySelector("#icon-description").querySelector("#modal-playlist-name").innerHTML = playlistTable.playlist_name
     topModal.querySelector("#icon-description").querySelector("#modal-playlist-author").innerHTML = playlistTable.playlist_author
     topModal.querySelector("#modal-img").src = playlistTable.playlist_art
@@ -56,16 +55,13 @@ function onLikeClick(image, playlistLikes) {
     } else {
         image.src = "assets/img/emptyheart.png"
         image.className = "empty"
-        // playlistLikes -= 0
     }
 
     likeClickId++
-    // document.querySelector("#like-text").innerHTML = "Likes: "+ playlistLikes
     image.parentNode.querySelector("#like-text").innerHTML = "Likes: "+ playlistLikes
 }
 
 function shufflePlaylist() {
-    //replace children
     let container = document.querySelector("#modal-bottom")
     for (let i = container.children.length; i >= 0; i--) {
         container.appendChild(container.children[Math.random() * i | 0]);
