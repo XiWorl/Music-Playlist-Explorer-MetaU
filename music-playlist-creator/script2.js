@@ -1,9 +1,8 @@
 
 
 function loadFeaturePage() {
-    console.log(playlist[0])
-    
-    let SelectedPlaylist = playlist[ Math.floor( Math.random() * playlist.length) ]
+    let randomNumber = Math.floor( Math.random() * playlist.length)
+    let SelectedPlaylist = playlist[randomNumber]
     document.querySelector("#playlist-name").innerHTML = SelectedPlaylist.playlist_name
     document.querySelector("#playlist-image").src = SelectedPlaylist.playlist_art
 
@@ -15,7 +14,6 @@ function loadFeaturePage() {
 
         for (let child of clone.children) {
             if (child.id === "song-info") {
-                console.log(SelectedPlaylist.songs[song].img)
                 child.parentNode.querySelector("#song-image").src = SelectedPlaylist.songs[song].img
                 
                 for (let divChild of child.children) {

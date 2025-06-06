@@ -39,7 +39,6 @@ function showPlaylistInfo(songTable, playlistTable) {
     let childElementsArray = [...document.querySelector("#modal-bottom").children];
     for (let i = 0; i < childElementsArray.length; i++) {
         if (saveList.includes(childElementsArray[i]) == false) {
-            console.log(childElementsArray[i])
             childElementsArray[i].remove()
         } 
     }
@@ -98,8 +97,6 @@ function createPlaylistSong(playlistTable) {
     }
 
     clone.addEventListener("click", function() {
-        console.log()
-        // if (disableSong ==  true) return
         if (likeClickId === playlistClickId) {
             document.querySelector(".modal").style.visibility = "visible"
             showPlaylistInfo(playlistTable.songs, playlistTable)
@@ -119,60 +116,14 @@ function createPlaylistSong(playlistTable) {
 function populatePlaylists() {
     for (let i = 0; i < playlist.length; i++) {
         if (deletedSongs.includes(playlist[i].playlist_name)) {
-            console.log("continue")
             continue
         }
-    //     let clone = document.querySelector(".song").cloneNode(true)
-    //     document.getElementById("music-holder").appendChild(clone)
-
         
-    //     clone.style.visibility = "visible"
-    //     clone.id = ""
-
-    //     for (let child of clone.children) {
-    //         if (child.nodeName === "H3") {
-    //             child.innerHTML = playlist[i].playlist_name
-    //         }else if (child.nodeName === "P") {
-    //             if (child.id === "like-text") {
-    //                 child.innerHTML = "Likes: "+playlist[i].playlist_likes
-    //             } else {
-    //                 child.innerHTML = "Created by "+playlist[i].playlist_author
-    //             }
-    //         }else if (child.nodeName === "IMG") {
-    //             child.src = playlist[i].playlist_art
-    //         }else if (child.nodeName === "DIV" && child.id == "likes") {
-    //             child.querySelector("#like-button").addEventListener("click", function() {
-    //                 playlistClickEnabled = false
-    //                 onLikeClick(child.querySelector("#like-button"), playlist[i].playlist_likes)
-    //             })
-
-    //             child.querySelector("#like-text").innerHTML = "Likes: "+playlist[i].playlist_likes
-    //         }
-    //     }
-
-    //     clone.addEventListener("click", function() {
-    //         console.log()
-    //         // if (disableSong ==  true) return
-    //         if (likeClickId === playlistClickId) {
-    //             document.querySelector(".modal").style.visibility = "visible"
-    //             showPlaylistInfo(playlist[i].songs, playlist[i])
-    //         } else {
-    //             playlistClickId = likeClickId
-    //         }
-    //     })
-
-    //     clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
-    //         // disableSong = true
-    //         event.stopPropagation()
-    //         clone.remove()
-    //     })
-    // }
         createPlaylistSong(playlist[i]) 
     }
     if (document.querySelector("#song-template") != null) {
         document.querySelector("#song-template").remove()
     }
-// document.querySelector("#song-template").style.visibility = "hidden"
 }
 
 function deletePlaylist(song) {
@@ -240,10 +191,7 @@ let filterInfo = {
 document.querySelector("#filter-field").addEventListener("change", function(event) {
     let selectedValue = event.target.value
 
-    console.log(filterInfo[event.target.value])
-
     if (selectedValue == "1") {
-        console.log("Sorting by Name")
         playlist.sort((a,b) => a.playlist_name.localeCompare(b.playlist_name))
     } else if (selectedValue == "2") {
         playlist.sort((a,b) => b.playlist_likes - a.playlist_likes)
