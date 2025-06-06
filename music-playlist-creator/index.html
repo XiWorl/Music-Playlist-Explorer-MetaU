@@ -13,16 +13,24 @@
     <header>
         <!-- Your header content here -->
         <h1>Music Playlist Explorer</h1>
+
+        <div id="search-field-div">
+            <form>
+                <input id="search-field" type="text" name="search" placeholder="Search.." onkeyup="searchPress()">
+            </form>
+        </div>
+
         <div id="top-title-page-select">
             <a href="index2.html">Featured</a>
             <a href="index.html">All</a>
         </div>
+
     </header>
 
     <main> 
         <!-- Your main content here -->
         <div id= "music-holder" class="playlist-cards">
-            <article id="song-template" class="song">
+            <!-- <article id="song-template" class="song">
                 <img src="assets\img\playlist.png" alt="">
                 <h3>Title</h3>
                 <p id="song-template-author">Author</p>
@@ -35,7 +43,7 @@
                 <div id="delete-holder">
                     <input type="image" src="assets\img\trash-solid.png" id="delete-button" alt="Like Button">
                 </div>
-            </article> 
+            </article>  -->
         </div>
         
         <!-- Modal Structure -->
@@ -70,6 +78,40 @@
         </div>
 
     </main>
+
+    <div id="placeholder">
+        <article id="song-template2" class="song">
+            <img src="assets\img\playlist.png" alt="">
+            <h3>Title</h3>
+            <p id="song-template-author">Author</p>
+
+            <div id="likes">
+                <input type="image" src="assets\img\emptyheart.png" id="like-button" alt="Like Button" class="empty"/>
+                <p id="like-text">Like</p>
+            </div>
+
+            <div id="delete-holder">
+                <input type="image" src="assets\img\trash-solid.png" id="delete-button" alt="Like Button">
+            </div>
+        </article> 
+
+        <div class="music-holder-template" id="holder-clone">
+            <article id="song-template" class="song">
+                <img src="assets\img\playlist.png" alt="">
+                <h3>Title</h3>
+                <p id="song-template-author">Author</p>
+
+                <div id="likes">
+                    <input type="image" src="assets\img\emptyheart.png" id="like-button" alt="Like Button" class="empty"/>
+                    <p id="like-text">Like</p>
+                </div>
+
+                <div id="delete-holder">
+                    <input type="image" src="assets\img\trash-solid.png" id="delete-button" alt="Like Button">
+                </div>
+            </article> 
+        </div>
+    </div>
 
     <footer>
         <!-- Your footer content here -->

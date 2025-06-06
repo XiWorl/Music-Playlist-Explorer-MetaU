@@ -373,3 +373,24 @@ main {
     height: 20px;
     width: 20px;
 }
+
+
+#search-field-div {
+    display: flex;
+    align-items: center;
+}
+#search-field {
+    margin-left: 5vw;
+    width: 20vw;
+    max-width: 250px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #e3f7ff;
+}
+
+
+#placeholder {
+    size: 0vw;
+    display: none;
+}

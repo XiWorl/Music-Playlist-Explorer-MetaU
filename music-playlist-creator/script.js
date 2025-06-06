@@ -40,9 +40,7 @@ function showPlaylistInfo(songTable, playlistTable) {
         if (saveList.includes(childElementsArray[i]) == false) {
             console.log(childElementsArray[i])
             childElementsArray[i].remove()
-        } else {
-            console.log(childElementsArray[i])
-        }
+        } 
     }
 }
 
@@ -72,55 +70,107 @@ function shufflePlaylist() {
     }
 }
 
-// let disableSong = false
+function createPlaylistSong(playlistTable) { 
+    let clone = document.querySelector(".song").cloneNode(true)
+    document.querySelector("#music-holder").appendChild(clone)
+
+    
+    clone.style.visibility = "visible"
+    clone.id = ""
+
+    for (let child of clone.children) {
+        if (child.nodeName === "H3") {
+            child.innerHTML = playlistTable.playlist_name
+        }else if (child.nodeName === "P") {
+            if (child.id === "like-text") {
+                child.innerHTML = "Likes: "+playlistTable.playlist_likes
+            } else {
+                child.innerHTML = "Created by "+playlistTable.playlist_author
+            }
+        }else if (child.nodeName === "IMG") {
+            child.src = playlistTable.playlist_art
+        }else if (child.nodeName === "DIV" && child.id == "likes") {
+            child.querySelector("#like-button").addEventListener("click", function() {
+                playlistClickEnabled = false
+                onLikeClick(child.querySelector("#like-button"), playlistTable.playlist_likes)
+            })
+
+            child.querySelector("#like-text").innerHTML = "Likes: "+playlistTable.playlist_likes
+        }
+    }
+
+    clone.addEventListener("click", function() {
+        console.log()
+        // if (disableSong ==  true) return
+        if (likeClickId === playlistClickId) {
+            document.querySelector(".modal").style.visibility = "visible"
+            showPlaylistInfo(playlistTable.songs, playlistTable)
+        } else {
+            playlistClickId = likeClickId
+        }
+    })
+
+    clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
+        // disableSong = true
+        event.stopPropagation()
+        clone.remove()
+    })
+}
+
 function populatePlaylists() {
     for (let i = 0; i < playlist.length; i++) {
-        let clone = document.querySelector("#song-template").cloneNode(true)
-        document.getElementById("music-holder").appendChild(clone)
+        console.log("create playlist")
+    //     let clone = document.querySelector(".song").cloneNode(true)
+    //     document.getElementById("music-holder").appendChild(clone)
 
         
-        clone.style.visibility = "visible"
-        clone.id = ""
+    //     clone.style.visibility = "visible"
+    //     clone.id = ""
 
-        for (let child of clone.children) {
-            if (child.nodeName === "H3") {
-                child.innerHTML = playlist[i].playlist_name
-            }else if (child.nodeName === "P") {
-                if (child.id === "like-text") {
-                    child.innerHTML = "Likes: "+playlist[i].playlist_likes
-                } else {
-                    child.innerHTML = "Created by "+playlist[i].playlist_author
-                }
-            }else if (child.nodeName === "IMG") {
-                child.src = playlist[i].playlist_art
-            }else if (child.nodeName === "DIV" && child.id == "likes") {
-                child.querySelector("#like-button").addEventListener("click", function() {
-                    playlistClickEnabled = false
-                    onLikeClick(child.querySelector("#like-button"), playlist[i].playlist_likes)
-                })
+    //     for (let child of clone.children) {
+    //         if (child.nodeName === "H3") {
+    //             child.innerHTML = playlist[i].playlist_name
+    //         }else if (child.nodeName === "P") {
+    //             if (child.id === "like-text") {
+    //                 child.innerHTML = "Likes: "+playlist[i].playlist_likes
+    //             } else {
+    //                 child.innerHTML = "Created by "+playlist[i].playlist_author
+    //             }
+    //         }else if (child.nodeName === "IMG") {
+    //             child.src = playlist[i].playlist_art
+    //         }else if (child.nodeName === "DIV" && child.id == "likes") {
+    //             child.querySelector("#like-button").addEventListener("click", function() {
+    //                 playlistClickEnabled = false
+    //                 onLikeClick(child.querySelector("#like-button"), playlist[i].playlist_likes)
+    //             })
 
-                child.querySelector("#like-text").innerHTML = "Likes: "+playlist[i].playlist_likes
-            }
-        }
+    //             child.querySelector("#like-text").innerHTML = "Likes: "+playlist[i].playlist_likes
+    //         }
+    //     }
 
-        clone.addEventListener("click", function() {
-            console.log()
-            // if (disableSong ==  true) return
-            if (likeClickId === playlistClickId) {
-                document.querySelector(".modal").style.visibility = "visible"
-                showPlaylistInfo(playlist[i].songs, playlist[i])
-            } else {
-                playlistClickId = likeClickId
-            }
-        })
+    //     clone.addEventListener("click", function() {
+    //         console.log()
+    //         // if (disableSong ==  true) return
+    //         if (likeClickId === playlistClickId) {
+    //             document.querySelector(".modal").style.visibility = "visible"
+    //             showPlaylistInfo(playlist[i].songs, playlist[i])
+    //         } else {
+    //             playlistClickId = likeClickId
+    //         }
+    //     })
 
-        clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
-            // disableSong = true
-            event.stopPropagation()
-            clone.remove()
-        })
+    //     clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
+    //         // disableSong = true
+    //         event.stopPropagation()
+    //         clone.remove()
+    //     })
+    // }
+        createPlaylistSong(playlist[i]) 
     }
-    document.querySelector("#song-template").remove()
+    if (document.querySelector("#song-template") != null) {
+        document.querySelector("#song-template").remove()
+    }
+// document.querySelector("#song-template").style.visibility = "hidden"
 }
 
 function deletePlaylist(song) {
@@ -140,4 +190,28 @@ document.querySelector("#modal-button").addEventListener("click", function() {
     shufflePlaylist()
 })
 
+function deleteAll() {
+    if (document.querySelector("#music-holder") != null) {
+        document.querySelector("#music-holder").remove()
+    }
+  
+    console.log(document.getElementById("holder-clone"))
+    let clone = document.querySelector("#holder-clone").cloneNode(true)
+    document.querySelector("main").appendChild(clone)
+    clone.id = "music-holder"
+}
 
+function searchPress() {
+    let searchValue = document.querySelector("#search-field").value
+    deleteAll()
+
+    if ( searchValue == " ") {
+        populatePlaylists()
+    }
+    for (let i = 0; i < playlist.length; i++) {
+        let substring = playlist[i].playlist_name.substring(0, searchValue.length)
+        if (substring.toUpperCase() === searchValue.toUpperCase()) {
+            createPlaylistSong(playlist[i])
+        }
+    }
+}
