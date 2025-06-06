@@ -271,5 +271,68 @@ let playlist = [
         img: "assets/img/P4 Album.png",
       },
     },
+  },
+  {
+    playlistID: 8,
+    playlist_name: "Can't Rush Greatness",
+    playlist_author: "Central Cee",
+    playlist_art: "assets/img/CRG Album.jpg",
+    playlist_likes: 47,
+    songs: {
+      "No Introduction": {
+        duration: "2:41",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "St. Patrick's": {
+        duration: "3:23",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "5 Star": {
+        duration: "2:17",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "Up North": {
+        duration: "2:08",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "Reach Out To The Truth": {
+        duration: "2:57",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "Gata": {
+        duration: "3:25",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "Limitless": {
+        duration: "3:21",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "GBP": {
+        duration: "3:02",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+      "Don't Know Anymore": {
+        duration: "3:48",
+        author: "Central Cee",
+        album: "Can't Rush Greatness",
+        img: "assets/img/CRG Album.jpg",
+      },
+    },
   }
 ];

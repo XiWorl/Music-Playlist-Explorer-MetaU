@@ -2,9 +2,10 @@ function showPlaylistInfo(songTable, playlistTable) {
     let saveList = []
 
     let topModal = document.querySelector("#modal-top")
-    topModal.querySelector("#icon").src = playlistTable.playlist_art
+    // topModal.querySelector("#icon").src = playlistTable.playlist_art
     topModal.querySelector("#icon-description").querySelector("#modal-playlist-name").innerHTML = playlistTable.playlist_name
     topModal.querySelector("#icon-description").querySelector("#modal-playlist-author").innerHTML = playlistTable.playlist_author
+    topModal.querySelector("#modal-img").src = playlistTable.playlist_art
 
     for (let songName in songTable) { 
         let alternate = true
@@ -33,7 +34,7 @@ function showPlaylistInfo(songTable, playlistTable) {
         saveList.push(clone)
     }
 
-    
+
     let childElementsArray = [...document.querySelector("#modal-bottom").children];
     for (let i = 0; i < childElementsArray.length; i++) {
         if (saveList.includes(childElementsArray[i]) == false) {
