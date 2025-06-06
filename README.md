@@ -1,5 +1,3 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Unit Assignment: Music Playlist Explorer
 
 Submitted by: **URIEL VIT-OJIEGBE**
@@ -19,7 +17,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
   - [x] Fetch data from a provided Javascript file and use it to create interactive playlist tiles.
 
 - [x] **Playlist Components**
-  - [ ] Each tile should display the playlist's:
+  - [x] Each tile should display the playlist's:
     - [x] Cover image
     - [x] Name
     - [x] Author
@@ -41,23 +39,23 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [x] Appear floating on the screen.
     - [x] The backdrop should appear darker or in a different shade.
 
-- [ ] **Like Playlists**
+- [x] **Like Playlists**
   - [x] Implement functionality to allow users to like playlists by clicking a heart icon on each playlist tile.
-  - [ ] When the heart icon is clicked:
+  - [x] When the heart icon is clicked:
     - [x] If previously unliked:
       - [x] The like count on the playlist tile should increase by 1.
       - [x] There should be visual feedback (such as the heart turning a different color) to show that the playlist has been liked by the user.
     - [x] If previously liked:
       - [x] The like count on the playlist tile should decrease by 1.
       - [x] There should be visual feedback (such as the heart turning a different color) to show that the playlist has been unliked by the user.
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
-      - [ ] a playlist with a like count of 0
-      - [ ] a playlist with a non-zero like count
+    - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
+      - [x] a playlist with a like count of 0
+      - [x] a playlist with a non-zero like count
 
-- [ ] **Shuffle Songs**
+- [x] **Shuffle Songs**
   - [x] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist's detail modal.
   - [x] When the shuffle button is clicked, the playlist's songs should display in a different order.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once. 
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once. 
   
 - [x] **Featured Page**
   - [x] Application includes a dedicated page that randomly selects and displays a playlist, showing the playlist’s:
@@ -70,7 +68,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
   - [x] When the page is refreshed or reloaded, a new random playlist is displayed
     - For example, navigating to the all playlists page and then back to the featured playlist page should result in a new random playlist being displayed
     - Note that because your algorithm will not be truly random, it is possible that the same playlist will feature twice in a row. 
-    - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once. 
+    - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once. 
   - [x] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons. 
 
 #### STRETCH FEATURES
@@ -109,8 +107,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
     - [x] Author
   - [] The search bar should include:
     - [x] Text input field
-    - [ ] Submit/Search Button
-    - [ ] Clear Button
+    - [x] Submit/Search Button
+    - [x] Clear Button
   - [ ] Playlists matching the search query in the text input are displayed in a grid view when the user:
     - [x] Presses the Enter Key
     - [ ] Clicks the Submit/Search Button 
@@ -140,20 +138,19 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The topics covered all the required features and a little of the stretch features. It didn't cover the delete, sort, or filter stretch features.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would refactor my codebase to be better using the knowledge I gained from my current project. I would add the additional stretch features that I'm missing. I would add more responsiveness to buttons and make the formatting more consistent.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I'm satisfied with all that I've done. I spent an immense amount of time on CSS which went over the original timeframe I had. I noticed my peers having great designs and stretch features that I would add next time.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shoutout to Dijohn for CSS inspiration
