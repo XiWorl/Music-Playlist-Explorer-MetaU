@@ -174,7 +174,7 @@ let playlist = [
       "HYAENA": {
         duration: "4:55",
         author: "Travis Scott",
-        album: "Preludes, Book 1",
+        album: "UTOPIA",
         img: "assets/img/Utopia.png",
       },
       "MY EYES": {
@@ -303,7 +303,7 @@ let playlist = [
         album: "Can't Rush Greatness",
         img: "assets/img/CRG Album.jpg",
       },
-      "Reach Out To The Truth": {
+      "CRG": {
         duration: "2:57",
         author: "Central Cee",
         album: "Can't Rush Greatness",
