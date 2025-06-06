@@ -35,25 +35,6 @@ function loadFeaturePage() {
 
     document.querySelector("#song").remove()
 
-    // for (let child of clone.children) {
-    //     if (child.nodeName === "IMG") {
-    //         child.src = songTable[songName].img
-    //     }else if (child.nodeName === "P") {
-    //         child.innerHTML = songTable[songName].duration
-    //     } else if (child.nodeName == "DIV") {
-            
-    //         for (let divChild of child.children) {
-    //             if (divChild.nodeName === "H4") {
-    //                 divChild.innerHTML = songName
-    //             } else if (divChild.nodeName === "P" && alternate === true) {
-    //                 divChild.innerHTML = songTable[songName].author
-    //                 alternate = false
-    //             }else if (divChild.nodeName === "P" && alternate === false) {
-    //                 divChild.innerHTML = songTable[songName].album
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 

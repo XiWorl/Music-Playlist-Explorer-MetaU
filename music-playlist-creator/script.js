@@ -72,6 +72,7 @@ function shufflePlaylist() {
     }
 }
 
+// let disableSong = false
 function populatePlaylists() {
     for (let i = 0; i < playlist.length; i++) {
         let clone = document.querySelector("#song-template").cloneNode(true)
@@ -92,17 +93,19 @@ function populatePlaylists() {
                 }
             }else if (child.nodeName === "IMG") {
                 child.src = playlist[i].playlist_art
-            }else if (child.nodeName === "DIV") {
+            }else if (child.nodeName === "DIV" && child.id == "likes") {
                 child.querySelector("#like-button").addEventListener("click", function() {
                     playlistClickEnabled = false
                     onLikeClick(child.querySelector("#like-button"), playlist[i].playlist_likes)
                 })
 
                 child.querySelector("#like-text").innerHTML = "Likes: "+playlist[i].playlist_likes
-            } 
+            }
         }
 
         clone.addEventListener("click", function() {
+            console.log()
+            // if (disableSong ==  true) return
             if (likeClickId === playlistClickId) {
                 document.querySelector(".modal").style.visibility = "visible"
                 showPlaylistInfo(playlist[i].songs, playlist[i])
@@ -110,10 +113,19 @@ function populatePlaylists() {
                 playlistClickId = likeClickId
             }
         })
+
+        clone.querySelector("#delete-holder").querySelector("#delete-button").addEventListener("click", function() {
+            // disableSong = true
+            event.stopPropagation()
+            clone.remove()
+        })
     }
     document.querySelector("#song-template").remove()
 }
 
+function deletePlaylist(song) {
+    song:remove()
+}
 
 
 document.querySelector(".close").addEventListener("click", function() {
@@ -127,3 +139,5 @@ populatePlaylists()
 document.querySelector("#modal-button").addEventListener("click", function() {
     shufflePlaylist()
 })
+
+

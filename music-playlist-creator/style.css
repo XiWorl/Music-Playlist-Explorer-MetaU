@@ -59,7 +59,7 @@ main {
     background-color: rgb(255, 255, 255);
     position: relative;
     transition: all 0.1s ease-in-out;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 
 }
 
@@ -102,6 +102,20 @@ main {
     /* white-space: nowrap; */
 }
 
+#delete-holder {
+    justify-content: right;
+    display: flex;
+    flex-direction: row;
+}
+
+#delete-button {
+    width: 16px;
+    height: 16px;
+    max-width: 100px;
+    bottom: 5px;
+    margin-right: 5px;
+    position: absolute;
+}
 
 #footer-div {
     padding: 10px;
